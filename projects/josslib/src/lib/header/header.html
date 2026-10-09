@@ -1,0 +1,45 @@
+<header class="jl-header">
+  @if (links.length > 0) {
+    <button
+      class="jl-header__menu-hamburguesa jl-icon-btn"
+      [ariaLabel]="openedMenu ? 'Cerrar menú' : 'Abrir menú'"
+      (click)="openedMenu = !openedMenu"
+    >
+      <div
+        [ngClass]="{
+          'jl-header__icon-hamburguesa': true,
+          'jl-header__icon-hamburguesa--opened': openedMenu,
+        }"
+      >
+        <div class="jl-header__icon-hamburguesa-line jl-header__icon-hamburguesa-line--top"></div>
+        <div
+          class="jl-header__icon-hamburguesa-line jl-header__icon-hamburguesa-line--middle"
+        ></div>
+        <div
+          class="jl-header__icon-hamburguesa-line jl-header__icon-hamburguesa-line--bottom"
+        ></div>
+      </div>
+    </button>
+  }
+  <div class="jl-header__title">Josselyn MM</div>
+  <nav class="jl-header__menu">
+    <ul class="jl-header__menu-list">
+      @for (linkItem of links; track linkItem.label) {
+        <li>
+          <a [routerLink]="linkItem.link" class="jl-header__menu-item" role="link">
+            <span class="jl-header__menu-link">{{ linkItem.label }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+  <button
+    [ngClass]="{
+      'jl-icon-btn jl-header__darkmode-switch pi': true,
+      'pi-moon': !darkMode,
+      'pi-sun': darkMode,
+    }"
+    [aria-label]="darkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
+    (click)="switchTheme()"
+  ></button>
+</header>

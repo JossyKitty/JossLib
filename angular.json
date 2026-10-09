@@ -30,6 +30,8 @@
               }
             ],
             "styles": [
+              "./projects/josslib/src/assets/themes/general.scss",
+              "./projects/josslib/src/assets/themes/josselyn.scss",
               "src/styles.scss"
             ]
           },
@@ -71,6 +73,37 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "josslib": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/josslib",
+      "sourceRoot": "projects/josslib/src",
+      "prefix": "jl",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/josslib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/josslib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/josslib/tsconfig.spec.json"
+          }
         }
       }
     }

@@ -6,8 +6,11 @@
   padding: 0.5em 1em;
   color: var(--shade-0);
   width: 100%;
-  position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
   height: 5em;
+  box-shadow: 0 0.25em 0.25em 0 rgba($color: #000000, $alpha: 0.25);
 
   &__icon-hamburguesa {
     width: 1.4em;
@@ -44,7 +47,7 @@
   &__menu-hamburguesa {
     border: 0.2em solid var(--shade-0);
     border-radius: 0.5em;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     aspect-ratio: 1;
@@ -161,6 +164,7 @@
     }
 
     &__menu-hamburguesa {
+      display: flex;
       &:has(.jl-header__icon-hamburguesa--opened) ~ .jl-header__menu {
         display: flex;
       }

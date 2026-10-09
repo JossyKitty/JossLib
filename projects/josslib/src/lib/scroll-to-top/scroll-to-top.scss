@@ -68,14 +68,6 @@
     height: 7.4em;
     position: relative;
 
-    &--fadein {
-      animation: button-fadein 0.3s linear;
-    }
-    
-    &--fadeout{
-      animation: button-fadein 0.3s reverse;
-    }
-
     &:hover,
     &:focus,
     &:focus-visible {
@@ -115,13 +107,4 @@
   }
 }
 
-@keyframes button-fadein {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+

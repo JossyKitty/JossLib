@@ -1,19 +1,23 @@
 <div class="jl-scroll-to-top">
-  <button
-    class="jl-icon-btn jl-scroll-to-top__button"
-    (click)="scrollToTop()"
-    aria-label="Ir hacia arriba"
-  >
-    <div class="jl-scroll-to-top__huella-deditos">
-      <div class="jl-scroll-to-top__huella-dedo jl-scroll-to-top__huella-dedo--one"></div>
-      <div class="jl-scroll-to-top__huella-dedo jl-scroll-to-top__huella-dedo--two"></div>
-      <div class="jl-scroll-to-top__huella-dedo jl-scroll-to-top__huella-dedo--three"></div>
-      <div class="jl-scroll-to-top__huella-dedo jl-scroll-to-top__huella-dedo--four"></div>
-    </div>
-    <div class="jl-scroll-to-top__huella-centro">
-      <div class="jl-scroll-to-top__huella-icon pi pi-chevron-up"></div>
-    </div>
-  </button>
+  @if (showButton) {
+    <button
+      class="jl-icon-btn jl-scroll-to-top__button"
+      (click)="scrollToTop()"
+      aria-label="Ir hacia arriba"
+      animate.enter="jl-scroll-to-top__button--fadein"
+      animate.leave="jl-scroll-to-top__button--fadeout"
+    >
+      <div class="jl-scroll-to-top__huella-deditos">
+        <div class="jl-scroll-to-top__huella-dedo jl-scroll-to-top__huella-dedo--one"></div>
+        <div class="jl-scroll-to-top__huella-dedo jl-scroll-to-top__huella-dedo--two"></div>
+        <div class="jl-scroll-to-top__huella-dedo jl-scroll-to-top__huella-dedo--three"></div>
+        <div class="jl-scroll-to-top__huella-dedo jl-scroll-to-top__huella-dedo--four"></div>
+      </div>
+      <div class="jl-scroll-to-top__huella-centro">
+        <div class="jl-scroll-to-top__huella-icon pi pi-chevron-up"></div>
+      </div>
+    </button>
+  }
   <svg
     width="219"
     height="551"

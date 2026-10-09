@@ -15,5 +15,6 @@ export class App {
   menuItems: IHeaderLink[] = [
     { label: "Inicio", link: "/landing"},
     { label: "Header", link: "/header"},
+    { label: "Scroll To Top", link: "/scroll-to-top"}
   ];
 }

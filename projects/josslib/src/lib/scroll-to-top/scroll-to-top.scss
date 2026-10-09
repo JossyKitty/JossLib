@@ -1,0 +1,108 @@
+.jl-scroll-to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  &__paw {
+    position: absolute;
+    bottom: -50vh;
+    height: 50vh;
+    right: 0em;
+    transform: translateX(15%);
+    animation: none;
+    animation-name: scroller-paw;
+    animation-duration: 1.2s;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+  }
+
+  &__huella-centro {
+    border-radius: 100%;
+    background-color: var(--primary-darker);
+    width: 4.69em;
+    height: 4.69em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__huella-icon {
+    color: var(--shade-0);
+    font-weight: bold;
+    font-size: 3em;
+  }
+
+  &__huella-deditos {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+    left: -1.2em;
+    top: 1em;
+  }
+
+  &__huella-dedo {
+    border-radius: 100%;
+    background-color: var(--primary-darker);
+    width: 1.75em;
+    height: 2em;
+
+    &--two,
+    &--three {
+      position: relative;
+      top: -1.2em;
+    }
+
+    &--two {
+      left: -0.1em;
+    }
+    &--three {
+      left: 0.1em;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    width: 7.4em;
+    height: 7.4em;
+    position: relative;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      outline: none !important;
+      .jl-scroll-to-top__huella-centro,
+      .jl-scroll-to-top__huella-dedo {
+        background-color: var(--primary-dark);
+        box-shadow: 0 0.25em 0.25em 0 rgba($color: #000000, $alpha: 0.25);
+      }
+    }
+
+    &:active {
+      > * {
+        scale: 0.9;
+      }
+    }
+  }
+}
+
+@keyframes scroller-paw {
+  0% {
+    bottom: -50vh;
+    scale: 1;
+  }
+
+  35% {
+    bottom: -6vh;
+    scale: 1;
+  }
+
+  40% {
+    scale: 0.8;
+  }
+
+  100% {
+    bottom: -50vh;
+  }
+}

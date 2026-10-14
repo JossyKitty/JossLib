@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ThemeService } from '../theme-service';
 
 export interface IHeaderLink {
-  label:string;
+  label: string;
   link: string;
 }
 
@@ -12,16 +13,26 @@ export interface IHeaderLink {
   imports: [RouterModule, CommonModule],
   templateUrl: './header.html',
   styleUrl: './header.scss',
-  standalone: true
+  standalone: true,
 })
-export class Header {
-  @Input() links:IHeaderLink[] = [];
-  @Input() darkMode:boolean = false;
-  @Output() darkModeChange:EventEmitter<boolean> = new EventEmitter<boolean>();
-  openedMenu:boolean = false;
+export class Header implements AfterViewInit {
+  @Input() links: IHeaderLink[] = [];
+  @Input() showThemeButton: boolean = true;
+  @Input() darkMode: boolean = false;
+  @Input() useInternalThemeService: boolean = true;
+  @Output() darkModeChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  openedMenu: boolean = false;
+  themeService = inject(ThemeService);
+
+  ngAfterViewInit(): void {
+    this.darkMode = this.themeService.darkMode;
+  }
 
   switchTheme() {
     this.darkMode = !this.darkMode;
     this.darkModeChange.emit(this.darkMode);
+    if (this.useInternalThemeService) {
+      this.themeService.switchTheme();
+    }
   }
 }

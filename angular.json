@@ -30,8 +30,18 @@
               }
             ],
             "styles": [
+              {
+                "input": "./projects/josslib/src/assets/themes/josselyn.scss",
+                "bundleName": "josselyn",
+                "inject": false
+              },
+              {
+                "input": "./projects/josslib/src/assets/themes/josselyn-dark.scss",
+                "bundleName": "josselyn-dark",
+                "inject": false
+              },
               "./projects/josslib/src/assets/themes/general.scss",
-              "./projects/josslib/src/assets/themes/josselyn.scss",
+              "node_modules/primeicons/primeicons.css",
               "src/styles.scss"
             ]
           },

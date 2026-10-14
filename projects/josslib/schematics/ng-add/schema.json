@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "SchematicsNgAdd",
+  "title": "My Add and Themes Schema",
+  "type": "object",
+  "properties": {
+    "theme": {
+      "description": "Configuración automática de temas de la librería",
+      "type": "string",
+      "default": "josselyn",
+      "x-prompt": {
+        "message": "- 🎨 Elige el tema a utilizar (Se añadirá al angular.json de TODOS los proyectos de esta carpeta) 🎨 -",
+        "type": "list",
+        "items": [
+          { "value": "ninguno", "label": "No instalar temas" },
+          {
+            "value": "dynamic",
+            "label": "Instalar todos los temas para cambio dinámico"
+          },
+          { "value": "josselyn", "label": "Josselyn" },
+          { "value": "josselyn-dark", "label": "Josselyn Dark" }
+        ]
+      }
+    }
+  },
+  "required": ["theme"]
+}

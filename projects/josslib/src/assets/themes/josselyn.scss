@@ -1,28 +1,32 @@
 :root {
-    --primary-lighter: #F5E6F1;
-    --primary-light:#EED3E7;
-    --primary: #d99ac8;
-    --primary-dark: #83305D;
-    --primary-darker: #3D0021;
+  --primary-lighter: #f5e6f1;
+  --primary-light: #eed3e7;
+  --primary: #d99ac8;
+  --primary-dark: #83305d;
+  --primary-darker: #3d0021;
 
-    --secondary-lighter: #DFF5FD;
-    --secondary-light:#B6E8FC;
-    --secondary: #60AEFE;
-    --secondary-dark: #6676F2;
-    --secondary-darker: #28F60;
+  --secondary-lighter: #dff5fd;
+  --secondary-light: #b6e8fc;
+  --secondary: #60aefe;
+  --secondary-dark: #6676f2;
+  --secondary-darker: #28F60;
 
-    --shade-900: #0C0305;
-    --shade-800: #251D25;
-    --shade-700: #3C333B;
-    --shade-600: #554C54;
-    --shade-500: #6F666D;
-    --shade-400: #8A8188;
-    --shade-300: #A59DA4;
-    --shade-200: #C2BAC0;
-    --shade-100: #E0D7DE;
-    --shade-0: #FEF6FC;
+  --shade-900: #0c0305;
+  --shade-800: #251d25;
+  --shade-700: #3c333b;
+  --shade-600: #554c54;
+  --shade-500: #6f666d;
+  --shade-400: #8a8188;
+  --shade-300: #a59da4;
+  --shade-200: #c2bac0;
+  --shade-100: #e0d7de;
+  --shade-0: #fef6fc;
 
-    *:focus-visible {
-        outline: outset 0.1em var(--primary) !important;
-    }
+  *:focus-visible {
+    outline: outset 0.1em var(--primary) !important;
+  }
+}
+
+html {
+  color: var(--shade-900);
 }

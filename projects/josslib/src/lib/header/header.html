@@ -33,13 +33,15 @@
       }
     </ul>
   </nav>
-  <button
-    [ngClass]="{
-      'jl-icon-btn jl-header__darkmode-switch pi': true,
-      'pi-moon': !darkMode,
-      'pi-sun': darkMode,
-    }"
-    [aria-label]="darkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
-    (click)="switchTheme()"
-  ></button>
+  @if (showThemeButton) {
+    <button
+      [ngClass]="{
+        'jl-icon-btn jl-header__darkmode-switch pi': true,
+        'pi-moon': !darkMode,
+        'pi-sun': darkMode,
+      }"
+      [aria-label]="darkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
+      (click)="switchTheme()"
+    ></button>
+  }
 </header>

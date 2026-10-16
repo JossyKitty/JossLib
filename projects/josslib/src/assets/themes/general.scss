@@ -23,10 +23,25 @@ html {
     font-family: var(--font-title);
   }
 
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 23px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+
   body {
     margin: 0;
     padding: 0;
   }
+}
+
+.jl-marker-text {
+  font-family: 'Gloria Hallelujah';
+  font-size: 18px;
 }
 
 .jl-icon-btn {

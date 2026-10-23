@@ -1,0 +1,23 @@
+<nav class="jl-tabs">
+  <div class="jl-tabs__background"></div>
+  <ul class="jl-tabs__list">
+    @for (tab of sections; track tab.itemID) {
+      <li class="jl-tabs__item">
+        <a [routerLink]="[]" [fragment]="tab.itemID" class="jl-tabs__tab">
+          <div class="jl-tabs__label">{{ tab.label }}</div>
+          @if (tab.imgSrc) {
+            <picture class="jl-tabs__picture">
+              @for (imgSrc of tab.imgSrc; track imgSrc) {
+                @if ($last) {
+                  <img [src]="imgSrc" alt="" />
+                } @else {
+                  <source [srcset]="imgSrc" />
+                }
+              }
+            </picture>
+          }
+        </a>
+      </li>
+    }
+  </ul>
+</nav>

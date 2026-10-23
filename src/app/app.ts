@@ -2,7 +2,6 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
 import { Header, IHeaderLink } from '../../projects/josslib/src/public-api';
 
-
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Header, RouterLinkWithHref],
@@ -13,8 +12,9 @@ export class App {
   protected readonly title = signal('library-joss');
 
   menuItems: IHeaderLink[] = [
-    { label: "Inicio", link: "/landing"},
-    { label: "Header", link: "/header"},
-    { label: "Scroll To Top", link: "/scroll-to-top"}
+    { label: 'Inicio', link: '/landing' },
+    { label: 'Header', link: '/header' },
+    { label: 'Scroll To Top', link: '/scroll-to-top' },
+    { label: 'Tabs', link: '/tabs' },
   ];
 }

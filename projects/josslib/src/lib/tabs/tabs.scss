@@ -2,7 +2,6 @@
   position: sticky;
   top: 6em;
   left: 0;
-  padding: 0.5em;
 
   &__background {
     filter: blur(0.2em);
@@ -28,6 +27,7 @@
     margin: 0;
     padding: 0;
     overflow: auto;
+    padding: 0.5em;
   }
 
   &__item {
@@ -35,7 +35,20 @@
     place-items: center;
   }
 
+  &__picture {
+    position: absolute;
+    right: -0.6em;
+    top: 50%;
+    transform: translate(50%, -50%);
+    aspect-ratio: 1;
+    width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__tab {
+    position: relative;
     background-color: var(--primary-dark);
     border-radius: 1em;
     padding: 0.6em 1.2em;
@@ -47,6 +60,22 @@
     &:not(.jl-tabs__tab--active) {
       &:hover {
         color: var(--shade-100);
+
+        .jl-tabs__picture {
+          scale: 1.05;
+        }
+      }
+    }
+
+    &:has(.jl-tabs__picture) {
+      margin-right: 0.9em;
+    }
+
+    &--active {
+      background-color: var(--primary-darker);
+      font-weight: bolder;
+      .jl-tabs__picture {
+        scale: 1.15;
       }
     }
   }

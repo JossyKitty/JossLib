@@ -12,19 +12,23 @@ export class TabsDocs {
   tabs:ITabItem[] = [
     {
       label: "Estudios",
-      itemID: "estudios"
+      itemID: "estudios",
+      imgSrc: ["ico_estudios.avif","ico_estudios.png"]
     },
     {
       label: "Trabajo",
-      itemID: "trabajo"
+      itemID: "trabajo",
+      imgSrc: ["ico_trabajo.avif","ico_trabajo.png"]
     },
     {
       label: "Habilidades",
-      itemID: "habilidades"
+      itemID: "habilidades",
+      imgSrc: ["ico_habilidades.avif","ico_habilidades.png"]
     },
     {
       label: "CV",
-      itemID: "CV"
+      itemID: "CV",
+      imgSrc: ["ico_cv.avif","ico_cv.png"]
     },
 
   ];

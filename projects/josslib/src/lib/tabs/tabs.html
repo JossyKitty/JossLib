@@ -3,7 +3,14 @@
   <ul class="jl-tabs__list">
     @for (tab of sections; track tab.itemID) {
       <li class="jl-tabs__item">
-        <a [routerLink]="[]" [fragment]="tab.itemID" class="jl-tabs__tab">
+        <a
+          [routerLink]="[]"
+          [fragment]="tab.itemID"
+          [ngClass]="{
+            'jl-tabs__tab': true,
+            'jl-tabs__tab--active': tab.itemID === selectedItemID,
+          }"
+        >
           <div class="jl-tabs__label">{{ tab.label }}</div>
           @if (tab.imgSrc) {
             <picture class="jl-tabs__picture">

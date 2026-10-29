@@ -1,4 +1,4 @@
-import { ViewportScroller } from '@angular/common';
+import { ViewportScroller, NgClass, CommonModule } from '@angular/common';
 import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
@@ -11,7 +11,7 @@ export interface ITabItem {
 
 @Component({
   selector: 'jl-tabs',
-  imports: [RouterLink],
+  imports: [RouterLink, NgClass, CommonModule],
   templateUrl: './tabs.html',
   styleUrl: './tabs.scss',
 })
@@ -23,6 +23,7 @@ export class Tabs implements OnInit, OnDestroy {
   router = inject(Router);
   route = inject(ActivatedRoute);
   routerSuscription: Subscription | undefined;
+  selectedItemID : string = "";
 
   ngOnInit(): void {
     this.viewportScroller.setOffset([0, this.scrollTopOffset]);
@@ -32,6 +33,7 @@ export class Tabs implements OnInit, OnDestroy {
         const URLArray = navigationEvent.urlAfterRedirects.split('#');
         const fragment = URLArray[URLArray.length - 1];
         this.viewportScroller.scrollToAnchor(fragment, { behavior: 'smooth' });
+        this.selectedItemID = fragment;
       });
   }
 

@@ -3,20 +3,20 @@ import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
 
-export interface ITabItem {
+export interface ISectionHeader {
   label: string;
   itemID: string;
   imgSrc?: string[];
 }
 
 @Component({
-  selector: 'jl-tabs',
+  selector: 'jl-section-scroller',
   imports: [RouterLink, NgClass, CommonModule],
-  templateUrl: './tabs.html',
-  styleUrl: './tabs.scss',
+  templateUrl: './section-scroller.html',
+  styleUrl: './section-scroller.scss',
 })
-export class Tabs implements OnInit, OnDestroy {
-  @Input() sections: ITabItem[] = [];
+export class SectionScroller implements OnInit, OnDestroy {
+  @Input() sections: ISectionHeader[] = [];
   @Input() scrollTopOffset: number = 144;
 
   viewportScroller = inject(ViewportScroller);

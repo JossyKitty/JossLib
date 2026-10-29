@@ -1,4 +1,4 @@
-.jl-tabs {
+.jl-section-scroller {
   position: sticky;
   top: 6em;
   left: 0;
@@ -57,24 +57,24 @@
     text-decoration: none;
     font-weight: bold;
 
-    &:not(.jl-tabs__tab--active) {
+    &:not(.jl-section-scroller__tab--active) {
       &:hover {
         color: var(--shade-100);
 
-        .jl-tabs__picture {
+        .jl-section-scroller__picture {
           scale: 1.05;
         }
       }
     }
 
-    &:has(.jl-tabs__picture) {
+    &:has(.jl-section-scroller__picture) {
       margin-right: 0.9em;
     }
 
     &--active {
       background-color: var(--primary-darker);
       font-weight: bolder;
-      .jl-tabs__picture {
+      .jl-section-scroller__picture {
         scale: 1.15;
       }
     }

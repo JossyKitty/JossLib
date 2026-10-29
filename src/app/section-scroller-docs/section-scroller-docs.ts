@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { ITabItem, Tabs } from '../../../projects/josslib/src/public-api';
+import { ISectionHeader, SectionScroller } from '../../../projects/josslib/src/public-api';
 
 @Component({
   selector: 'app-tabs-docs',
-  imports: [Tabs],
-  templateUrl: './tabs-docs.html',
-  styleUrl: './tabs-docs.scss',
+  imports: [SectionScroller],
+  templateUrl: './section-scroller-docs.html',
+  styleUrl: './section-scroller-docs.scss',
 })
-export class TabsDocs {
+export class SectionScrollerDocs {
 
-  tabs:ITabItem[] = [
+  tabs:ISectionHeader[] = [
     {
       label: "Estudios",
       itemID: "estudios",

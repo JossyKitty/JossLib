@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Tabs } from './tabs';
+import { TabsDocs } from './section-scroller-docs';
 
-describe('Tabs', () => {
-  let component: Tabs;
-  let fixture: ComponentFixture<Tabs>;
+describe('TabsDocs', () => {
+  let component: TabsDocs;
+  let fixture: ComponentFixture<TabsDocs>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Tabs],
+      imports: [TabsDocs],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Tabs);
+    fixture = TestBed.createComponent(TabsDocs);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

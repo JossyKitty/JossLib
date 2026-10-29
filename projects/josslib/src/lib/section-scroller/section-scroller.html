@@ -1,19 +1,19 @@
-<nav class="jl-tabs">
-  <div class="jl-tabs__background"></div>
-  <ul class="jl-tabs__list">
+<nav class="jl-section-scroller">
+  <div class="jl-section-scroller__background"></div>
+  <ul class="jl-section-scroller__list">
     @for (tab of sections; track tab.itemID) {
-      <li class="jl-tabs__item">
+      <li class="jl-section-scroller__item">
         <a
           [routerLink]="[]"
           [fragment]="tab.itemID"
           [ngClass]="{
-            'jl-tabs__tab': true,
-            'jl-tabs__tab--active': tab.itemID === selectedItemID,
+            'jl-section-scroller__tab': true,
+            'jl-section-scroller__tab--active': tab.itemID === selectedItemID,
           }"
         >
-          <div class="jl-tabs__label">{{ tab.label }}</div>
+          <div class="jl-section-scroller__label">{{ tab.label }}</div>
           @if (tab.imgSrc) {
-            <picture class="jl-tabs__picture">
+            <picture class="jl-section-scroller__picture">
               @for (imgSrc of tab.imgSrc; track imgSrc) {
                 @if ($last) {
                   <img [src]="imgSrc" alt="" />

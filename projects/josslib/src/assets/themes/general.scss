@@ -1,4 +1,5 @@
 @use '../fonts/fonts.scss';
+@use '../fonts/icons.scss';
 
 :root {
   --font-general: 'Nunito', sans-serif;
@@ -42,6 +43,24 @@ html {
     img {
       width: 100%;
       height: auto;
+    }
+  }
+}
+
+ul.jl-catlist {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    display: grid;
+    grid-template-columns: 1em 1fr;
+    gap: 0.4em;
+
+    &::before {
+      font-family: 'JossLibIcons';
+      content: '\e801';
+      margin-top: 0.1em;
     }
   }
 }

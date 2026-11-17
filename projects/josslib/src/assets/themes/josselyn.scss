@@ -30,3 +30,15 @@
 html {
   color: var(--shade-900);
 }
+
+ul {
+  li {
+    &::before {
+      color: var(--primary-dark);
+    }
+  }
+}
+
+.jl-background {
+  background-color: var(--shade-0);
+}

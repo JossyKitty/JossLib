@@ -31,3 +31,15 @@ html {
   color: var(--shade-0);
   background-color: var(--shade-800);
 }
+
+ul {
+  li {
+    &::before {
+      color: var(--primary-light);
+    }
+  }
+}
+
+.jl-background {
+  background-color: var(--shade-900);
+}
